@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokédex</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="encabezado">
+    <h1>Pokédex</h1>
+    <p>Explora Pokémon con la PokeAPI</p>
+  </header>
+
+  <main class="contenedor">
+    <!-- Panel principal -->
+    <section class="panel-principal">
+      <div class="buscador">
+        <input
+          type="text"
+          id="entradaBusqueda"
+          placeholder="Busca por nombre o número (ej: pikachu o 25)"
+        />
+        <button id="btnBuscar">Buscar</button>
+      </div>
+
+      <div class="navegacion">
+        <button id="btnAnterior">⬅ Anterior</button>
+        <button id="btnSiguiente">Siguiente ➡</button>
+      </div>
+
+      <div id="mensajeEstado"></div>
+
+      <div class="tarjeta-pokemon">
+        <div class="imagen-contenedor">
+          <img id="imagenPokemon" src="" alt="Pokémon" />
+        </div>
+
+        <div class="info-principal">
+          <p id="numeroPokemon">#000</p>
+          <h2 id="nombrePokemon">Cargando...</h2>
+
+          <button id="btnFavorito" class="btn-favorito">☆ Agregar a favoritos</button>
+
+          <div class="tipos">
+            <h3>Tipos</h3>
+            <div id="tiposPokemon" class="lista-tipos"></div>
+          </div>
+
+          <div class="datos-basicos">
+            <div class="dato">
+              <span class="etiqueta">Altura</span>
+              <span id="alturaPokemon">-</span>
+            </div>
+            <div class="dato">
+              <span class="etiqueta">Peso</span>
+              <span id="pesoPokemon">-</span>
+            </div>
+          </div>
+
+          <div class="habilidades">
+            <h3>Habilidades</h3>
+            <div id="habilidadesPokemon" class="lista-habilidades"></div>
+          </div>
+
+          <div class="estadisticas">
+            <h3>Estadísticas</h3>
+            <div id="estadisticasPokemon"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lista de Pokémon -->
+    <section class="panel-secundario">
+      <div class="seccion">
+        <div class="titulo-seccion">
+          <h2>Pokémon disponibles</h2>
+          <div class="paginacion-lista">
+            <button id="btnListaAnterior">⬅</button>
+            <span id="paginaActual">Página 1</span>
+            <button id="btnListaSiguiente">➡</button>
+          </div>
+        </div>
+        <div id="listaPokemon" class="grid-pokemon"></div>
+      </div>
+
+      <div class="seccion">
+        <div class="titulo-seccion">
+          <h2>Favoritos</h2>
+        </div>
+        <div id="listaFavoritos" class="grid-favoritos"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
